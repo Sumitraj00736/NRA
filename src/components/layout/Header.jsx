@@ -67,10 +67,12 @@ function Header() {
         </div>
 
         {isDropdownOpen && (
-          <div className="absolute top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white">
-            <Link className="p-2">Our Services</Link>
-            <Link className="p-2">Privacy Policy</Link>
-            <Link className="p-2">Terms of Services</Link>
+          <div className="absolute  top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white">
+            <div className="flex flex-col items-start space-y-2">
+              <Link className="p-2">Our Services</Link>
+              <Link className="p-2">Privacy Policy</Link>
+              <Link className="p-2">Terms of Services</Link>
+            </div>
           </div>
         )}
       </div>
