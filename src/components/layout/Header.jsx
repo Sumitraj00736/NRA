@@ -78,7 +78,7 @@ function Header() {
       </div>
 
       <div
-        className={`fixed top-0 right-0 w-1/3 h-full bg-[rgba(13,23,77,1)] text-white shadow-lg z-50 transform transition-transform duration-500 ${
+        className={`fixed top-0 right-0 w-1/2 h-full bg-[rgba(13,23,77,1)] text-white shadow-lg z-50 transform transition-transform duration-500 ${
           isHamburgerMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
