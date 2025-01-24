@@ -48,10 +48,10 @@ function Header() {
       <div className="hidden lg:flex gap-2 justify-center items-center">
         <div className="flex items-center gap-8 text-white font-semibold tracking-tight">
           <Link>Home</Link>
-          <Link>Events</Link>
+          <Link to="">Events</Link>
           <Link>Registration</Link>
-          <Link>Contact Us</Link>
-          <Link>About Us</Link>
+          <Link to="/contact-us">Contact Us</Link>
+          <Link to="/about-us">About Us</Link>
           <Link>Other Services</Link>
         </div>
 
@@ -68,10 +68,10 @@ function Header() {
 
         {isDropdownOpen && (
           <div className="absolute  top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white">
-            <div className="flex flex-col items-start space-y-2">
+            <div className="flex flex-col items-start space-y-2 z-20">
               <Link className="p-2">Our Services</Link>
-              <Link className="p-2">Privacy Policy</Link>
-              <Link className="p-2">Terms of Services</Link>
+              <Link to="/privacy-policy" className="p-2">Privacy Policy</Link>
+              <Link to="/terms-of-services" className="p-2">Terms of Services</Link>
             </div>
           </div>
         )}
@@ -117,11 +117,11 @@ function Header() {
           <Link>Home</Link>
           <Link>Events</Link>
           <Link>Registration</Link>
-          <Link>Contact Us</Link>
-          <Link>About Us</Link>
+          <Link to="/contact-us">Contact Us</Link>
+          <Link to="/about-us">About Us</Link>
           <Link>Our Services</Link>
-          <Link>Privacy Policy</Link>
-          <Link>Terms of Services</Link>
+          <Link to="/privacy-policy" >Privacy Policy</Link>
+          <Link to="/terms-of-services" >Terms of Services</Link>
         </div>
       </div>
 

@@ -14,6 +14,7 @@ export default {
       },
       colors: {
         customBlue: "rgba(13, 23, 77, 1)",
+        customSky: '#2b9af3',
       },
     },
   },

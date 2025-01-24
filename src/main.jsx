@@ -3,12 +3,38 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import TermsOfServices from "./pages/TermsOfServices.jsx";
+// import Privacy from "./pages/PrivacyPolicy.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/*",
+    path: "/",
     element: <App />,
-    childrem: [],
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "contact-us",
+        element: <ContactUs />,
+      },
+      {
+        path: "about-us",
+        element: <AboutUs />,
+      },
+      {
+        path: "terms-of-services",
+        element: <TermsOfServices/>,
+      },
+      // {
+      //   path: "privacy-policy",
+      //   element: <Privacy/>,
+      // },
+    ],
   },
 ]);
 
