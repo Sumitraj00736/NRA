@@ -166,14 +166,22 @@ function Header() {
             />
             <div className="absolute bottom-0 left-0 w-full h-[4px] bg-white"></div>
           </div>
-          <Link>Home</Link>
-          <Link>Events</Link>
-          <Link>Registration</Link>
-          <Link to="/contact-us">Contact Us</Link>
-          <Link to="/about-us">About Us</Link>
-          <Link>Our Services</Link>
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-services">Terms of Services</Link>
+          <Link onClick={toggleHamburgerMenu}>Home</Link>
+          <Link onClick={toggleHamburgerMenu}>Events</Link>
+          <Link onClick={toggleHamburgerMenu}>Registration</Link>
+          <Link to="/contact-us" onClick={toggleHamburgerMenu}>
+            Contact Us
+          </Link>
+          <Link to="/about-us" onClick={toggleHamburgerMenu}>
+            About Us
+          </Link>
+          <Link onClick={toggleHamburgerMenu}>Our Services</Link>
+          <Link to="/privacy-policy" onClick={toggleHamburgerMenu}>
+            Privacy Policy
+          </Link>
+          <Link to="/terms-of-services" onClick={toggleHamburgerMenu}>
+            Terms of Services
+          </Link>
         </div>
       </div>
 
