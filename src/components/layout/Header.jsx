@@ -1,19 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   // Function to toggle the dropdown visibility
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleDropdown = (event) => {
+    event.stopPropagation(); // Prevent event propagation
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  // Function to close dropdown explicitly
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
   };
 
   // Function to toggle the hamburger menu visibility
   const toggleHamburgerMenu = () => {
-    setIsHamburgerMenuOpen(!isHamburgerMenuOpen);
+    setIsHamburgerMenuOpen((prev) => !prev);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="bg-[rgba(13,23,77,1)] px-[24px] py-[2px] flex justify-between items-center text-[16px] relative">
@@ -46,37 +67,69 @@ function Header() {
 
       {/* Full Menu for Large Screens */}
       <div className="hidden lg:flex gap-2 justify-center items-center">
-        <div className="flex items-center gap-8 text-white font-semibold tracking-tight">
+        <div
+          className="flex items-center gap-8 text-white font-semibold tracking-tight "
+          ref={dropdownRef}
+        >
           <Link>Home</Link>
           <Link to="">Events</Link>
           <Link>Registration</Link>
           <Link to="/contact-us">Contact Us</Link>
           <Link to="/about-us">About Us</Link>
-          <Link>Other Services</Link>
+          <Link onClick={toggleDropdown}>Other Services</Link>
         </div>
 
-        <div className="flex justify-center items-center">
+        {/* Dropdown Section */}
+        <div className="flex justify-center items-center" ref={dropdownRef}>
           <img
             className={`h-[10px] filter contrast-150 cursor-pointer transition-transform duration-300 ${
               isDropdownOpen ? "rotate-180" : ""
             }`}
             src="/assets/drop.png"
-            alt="Logo"
+            alt="Dropdown Icon"
             onClick={toggleDropdown}
           />
         </div>
 
         {isDropdownOpen && (
-          <div className="absolute  top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white">
+          <div className="absolute z-10 top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white">
             <div className="flex flex-col items-start space-y-2 z-20">
-              <Link className="p-2">Our Services</Link>
-              <Link to="/privacy-policy" className="p-2">Privacy Policy</Link>
-              <Link to="/terms-of-services" className="p-2">Terms of Services</Link>
+              <Link
+                to="/our-services"
+                className="p-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeDropdown();
+                }}
+              >
+                Our Services
+              </Link>
+              <Link
+                to="/privacy-policy"
+                className="p-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeDropdown();
+                }}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-services"
+                className="p-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeDropdown();
+                }}
+              >
+                Terms of Services
+              </Link>
             </div>
           </div>
         )}
       </div>
 
+      {/* Hamburger Menu */}
       <div
         className={`fixed top-0 right-0 w-1/2 h-full bg-[rgba(13,23,77,1)] text-white shadow-lg z-50 transform transition-transform duration-500 ${
           isHamburgerMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -104,14 +157,13 @@ function Header() {
         <div className="flex flex-col p-4 space-y-4">
           <div
             className="relative bg-[rgba(10,20,60,1)] rounded-md overflow-hidden"
-            style={{ paddingBottom: "10px" }} // Ensures extra spacing for the border
+            style={{ paddingBottom: "10px" }}
           >
             <img
               className="w-[186px] mb-0"
               src="/assets/image 35.png"
               alt="Logo"
             />
-            {/* White border at the bottom */}
             <div className="absolute bottom-0 left-0 w-full h-[4px] bg-white"></div>
           </div>
           <Link>Home</Link>
@@ -120,8 +172,8 @@ function Header() {
           <Link to="/contact-us">Contact Us</Link>
           <Link to="/about-us">About Us</Link>
           <Link>Our Services</Link>
-          <Link to="/privacy-policy" >Privacy Policy</Link>
-          <Link to="/terms-of-services" >Terms of Services</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-of-services">Terms of Services</Link>
         </div>
       </div>
 
