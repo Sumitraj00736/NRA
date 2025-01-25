@@ -7,7 +7,7 @@ import Home from "./pages/Home.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsOfServices from "./pages/TermsOfServices.jsx";
-// import Privacy from "./pages/PrivacyPolicy.jsx";
+import Privacy from "./pages/PrivacyPolicy.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       },
       {
         path: "terms-of-services",
-        element: <TermsOfServices/>,
+        element: <TermsOfServices />,
       },
-      // {
-      //   path: "privacy-policy",
-      //   element: <Privacy/>,
-      // },
+      {
+        path: "privacy-policy",
+        element: <Privacy />,
+      },
     ],
   },
 ]);
