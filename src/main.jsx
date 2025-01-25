@@ -8,6 +8,7 @@ import ContactUs from "./pages/ContactUs.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsOfServices from "./pages/TermsOfServices.jsx";
 import Privacy from "./pages/PrivacyPolicy.jsx";
+import { EventProvider } from "./EventProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <EventProvider>
+      <RouterProvider router={router} />
+    </EventProvider>
   </React.StrictMode>
 );
