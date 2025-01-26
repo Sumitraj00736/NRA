@@ -41,7 +41,7 @@ function Header() {
 
   const handleLinkClick = (path) => {
     closeDropdown();
-    navigate(path); 
+    navigate(path);
   };
 
   return (
@@ -76,7 +76,7 @@ function Header() {
       <div className="hidden lg:flex gap-2 justify-center items-center">
         <div className="flex items-center gap-8 text-white font-semibold tracking-tight">
           <Link>Home</Link>
-          <Link to="">Events</Link>
+          <Link to="/eventList">Events</Link>
           <Link>Registration</Link>
           <Link to="/contact-us">Contact Us</Link>
           <Link to="/about-us">About Us</Link>
@@ -162,7 +162,9 @@ function Header() {
             <div className="absolute bottom-0 left-0 w-full h-[4px] bg-white"></div>
           </div>
           <Link onClick={toggleHamburgerMenu}>Home</Link>
-          <Link onClick={toggleHamburgerMenu}>Events</Link>
+          <Link to="/eventList" onClick={toggleHamburgerMenu}>
+            Events
+          </Link>
           <Link onClick={toggleHamburgerMenu}>Registration</Link>
           <Link to="/contact-us" onClick={toggleHamburgerMenu}>
             Contact Us

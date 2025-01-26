@@ -10,6 +10,7 @@ import TermsOfServices from "./pages/TermsOfServices.jsx";
 import Policy from "./pages/Policy.jsx";
 import { EventProvider } from "./EventProvider.jsx";
 import EventsDetails from "./pages/EventsDetails.jsx";
+import Events from "./pages/Events.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "events/:id",
         element: <EventsDetails />,
+      },
+      {
+        path: "eventList",
+        element: <Events/>,
       },
     ],
   },
