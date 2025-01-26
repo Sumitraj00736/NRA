@@ -7,8 +7,9 @@ import Home from "./pages/Home.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsOfServices from "./pages/TermsOfServices.jsx";
-import Privacy from "./pages/PrivacyPolicy.jsx";
+import Policy from "./pages/Policy.jsx";
 import { EventProvider } from "./EventProvider.jsx";
+import EventsDetails from "./pages/EventsDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "privacy-policy",
-        element: <Privacy />,
+        element: <Policy />,
+      },
+      {
+        path: "events/:id",
+        element: <EventsDetails />,
       },
     ],
   },
