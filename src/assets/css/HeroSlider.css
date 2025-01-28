@@ -26,15 +26,7 @@
     transition: opacity 0.3s ease;
 }
 
-
-.slick-prev, .slick-next {
-    z-index: 10; 
-}
-
-
-.bg-customBlue {
-    background-color: #180629;
-}
+  
 
 
 @media (max-width: 768px) {

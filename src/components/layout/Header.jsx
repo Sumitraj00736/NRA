@@ -44,12 +44,13 @@ function Header() {
     <div className="sticky bg-white px-[32px] py-[4px] flex justify-between items-center text-[16px] relative">
       <div>
         <img
-          className=" relative w-[30%] mb-2"
+          className="w-[50%] mb-2"
           src="http://www.nra.org.np/assets/image/nra-logo.png"
           alt="Logo"
         />
       </div>
 
+      {/* ********************************** Hamburger Menu Button ***************************** */}
       <div className="lg:hidden flex items-center">
         <button
           onClick={toggleHamburgerMenu}
@@ -72,97 +73,102 @@ function Header() {
         </button>
       </div>
 
-      <div className="hidden bg-blue-500 p-4 rounded-full lg:flex gap-2  justify-center items-center">
-        <div className="flex items-center gap-8 text-sm text-white font-bold">
-          <Link to="/" className="">Home</Link>
-          <Link to="/">Acts & Regulations</Link>
-          <span
-            onClick={toggleDropdown("updates")}
-            className="cursor-pointer dropdown-toggle flex items-center "
+      {/* ********************** Header Links ************************** */}
+      <div className="hidden lg:flex gap-8 items-center whitespace-nowrap">
+        <Link className="hover:text-orange-500 font-medium" to="/">
+          Home
+        </Link>
+        <Link className="hover:text-orange-500 font-medium" to="/">
+          Acts & Regulations
+        </Link>
+        <span
+          onClick={toggleDropdown("updates")}
+          className="cursor-pointer dropdown-toggle flex items-center hover:text-orange-500 font-medium"
+        >
+          Updates
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-1 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            Updates
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-1 h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            onClick={toggleDropdown("about")}
-            className="cursor-pointer dropdown-toggle flex items-center"
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </span>
+        <span
+          onClick={toggleDropdown("about")}
+          className="cursor-pointer dropdown-toggle flex items-center hover:text-orange-500 font-medium"
+        >
+          About Us
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="ml-1 h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            About Us
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="ml-1 h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <Link to="/contact-us">Contact Us</Link>
-        </div>
-
-        {/* Dropdown Section */}
-        {isDropdownOpen === "updates" && (
-          <div className="absolute z-10 top-[85px] right-[20] bg-orange-500 shadow-lg p-2 rounded-md text-white dropdown-menu">
-            <div className="flex flex-col items-start space-y-2 z-20">
-              <Link
-                to="/news"
-                className="p-2 w-full hover:bg-orange-400 border-b border-white"
-                onClick={closeDropdown}
-              >
-                News
-              </Link>
-              <Link
-                to="/gallery"
-                className="p-2 w-full hover:bg-orange-400 border-b border-white"
-                onClick={closeDropdown}
-              >
-                Gallery
-              </Link>
-              <Link
-                to="/events-activities"
-                className="p-2 w-full hover:bg-orange-400"
-                onClick={closeDropdown}
-              >
-                Events and Activities
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {isDropdownOpen === "about" && (
-          <div className="absolute z-10 top-[85px] right-[100px] bg-orange-500 w-32 shadow-lg p-2 rounded-md text-white dropdown-menu">
-            <div className="flex flex-col items-start space-y-2 z-20">
-              <Link to="/about-us" className="p-2" onClick={closeDropdown}>
-                About Us
-              </Link>
-              <Link to="/our-story" className="p-2" onClick={closeDropdown}>
-                Our Story
-              </Link>
-            </div>
-          </div>
-        )}
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </span>
+        <Link className="hover:text-orange-500 font-medium" to="/contact-us">
+          Contact Us
+        </Link>
       </div>
 
-      {/* Hamburger Menu */}
+      {/***************************************************  Dropdowns **************************************/}
+      {isDropdownOpen === "updates" && (
+        <div className="absolute z-10 top-[85px] right-[180px] bg-orange-500 shadow-lg p-2 rounded-md text-white dropdown-menu">
+          <div className="flex flex-col items-start space-y-2 z-20">
+            <Link
+              to="/news"
+              className="p-2 w-full hover:bg-orange-400 border-b border-white"
+              onClick={closeDropdown}
+            >
+              News
+            </Link>
+            <Link
+              to="/gallery"
+              className="p-2 w-full hover:bg-orange-400 border-b border-white"
+              onClick={closeDropdown}
+            >
+              Gallery
+            </Link>
+            <Link
+              to="/events-activities"
+              className="p-2 w-full hover:bg-orange-400"
+              onClick={closeDropdown}
+            >
+              Events and Activities
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {isDropdownOpen === "about" && (
+        <div className="absolute z-10 top-[85px] right-[100px] bg-orange-500 w-32 shadow-lg p-2 rounded-md text-white dropdown-menu">
+          <div className="flex flex-col items-start space-y-2 z-20">
+            <Link to="/about-us" className="p-2" onClick={closeDropdown}>
+              About Us
+            </Link>
+            <Link to="/our-story" className="p-2" onClick={closeDropdown}>
+              Our Story
+            </Link>
+          </div>
+        </div>
+      )}
+
+      {/***************************************************  Hamburger Menu *************************************/}
       <div
         className={`fixed top-0 right-0 w-1/2 h-full bg-[rgba(13,23,77,1)] text-white shadow-lg z-50 transform transition-transform duration-500 ${
           isHamburgerMenuOpen ? "translate-x-0" : "translate-x-full"
