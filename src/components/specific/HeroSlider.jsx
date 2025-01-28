@@ -6,9 +6,8 @@ import "../../assets/css/HeroSlider.css";
 
 function HeroSlider() {
   const slides = [
-    { id: 1, title: "MUSICAL CONCERTS", icon: "path/to/icon1.svg" },
-    { id: 2, title: "WORKSHOPS", icon: "path/to/icon2.svg" },
-    { id: 3, title: "CONFERENCES", icon: "path/to/icon3.svg" },
+    { id: 1, title: "", icon: "http://www.nra.org.np/assets/image/nra_cover2.jpg" },
+    { id: 2, title: "", icon: "http://www.nra.org.np/assets/image/nra_cover1.jpg" },
   ];
 
   const settings = {
@@ -52,16 +51,16 @@ function HeroSlider() {
   };
 
   return (
-    <div className="slider-container bg-customBlue h-[600px] flex justify-center items-center px-4 sm:px-8">
+    <div className="slider-container bg-transparent h-[600px] flex justify-center items-center px-4 sm:px-8">
       <Slider {...settings} className="w-full max-w-[1200px]">
         {slides.map((slide) => (
-          <div key={slide.id} className="p-10 sm:p-8 flex justify-center items-center">
-            <div className="bg-blue-900 w-full max-w-[750px] h-[360px] relative rounded-2xl flex flex-col justify-center items-center text-white px-4 sm:px-6">
+          <div key={slide.id} className="p-2 sm:p-8 flex justify-center items-center">
+            <div className=" w-full max-w-[750px] h-[360px] relative rounded-2xl flex flex-col justify-center items-center text-white px-4 sm:px-6">
               <div className="flex justify-center items-center rounded mb-8">
                 <img
                   src={slide.icon}
                   alt={slide.title}
-                  className="h-[120px] w-[120px] sm:h-[150px] sm:w-[150px] object-contain"
+                  className="h-full w-full max-w-[750px] mt-[70px] object-contain"
                 />
               </div>
               <h2 className="text-lg sm:text-2xl font-bold text-center mt-2">{slide.title}</h2>
