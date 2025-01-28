@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
   const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(null); // Combine dropdown state
+  const [isDropdownOpen, setIsDropdownOpen] = useState(null);
   const navigate = useNavigate();
 
   const toggleDropdown = (dropdown) => (event) => {
@@ -41,10 +41,10 @@ function Header() {
   };
 
   return (
-    <div className="sticky bg-white px-[24px] py-[2px] flex justify-between items-center text-[16px] relative">
+    <div className="sticky bg-white px-[32px] py-[4px] flex justify-between items-center text-[16px] relative">
       <div>
         <img
-          className="w-[50%] h-[50%] mb-2"
+          className=" relative w-[30%] mb-2"
           src="http://www.nra.org.np/assets/image/nra-logo.png"
           alt="Logo"
         />
@@ -72,13 +72,13 @@ function Header() {
         </button>
       </div>
 
-      <div className="hidden lg:flex gap-2  justify-center items-center">
-        <div className="flex items-center l-20 gap-8 text-sm text-black font-semibold tracking-tight">
-          <Link to="/">Home</Link>
-          <Link to="/">Acts&Regulations</Link>
+      <div className="hidden bg-blue-500 p-4 rounded-full lg:flex gap-2  justify-center items-center">
+        <div className="flex items-center gap-8 text-sm text-white font-bold">
+          <Link to="/" className="">Home</Link>
+          <Link to="/">Acts & Regulations</Link>
           <span
             onClick={toggleDropdown("updates")}
-            className="cursor-pointer dropdown-toggle flex items-center text-orange-500"
+            className="cursor-pointer dropdown-toggle flex items-center "
           >
             Updates
             <svg
@@ -86,7 +86,7 @@ function Header() {
               className="ml-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="black"
+              stroke="white"
             >
               <path
                 strokeLinecap="round"
@@ -106,7 +106,7 @@ function Header() {
               className="ml-1 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="black"
+              stroke="white"
             >
               <path
                 strokeLinecap="round"
@@ -121,7 +121,7 @@ function Header() {
 
         {/* Dropdown Section */}
         {isDropdownOpen === "updates" && (
-          <div className="absolute z-10 top-[81px] right-[10px] bg-orange-500 shadow-lg p-2 rounded-md text-white dropdown-menu">
+          <div className="absolute z-10 top-[85px] right-[20] bg-orange-500 shadow-lg p-2 rounded-md text-white dropdown-menu">
             <div className="flex flex-col items-start space-y-2 z-20">
               <Link
                 to="/news"
@@ -149,7 +149,7 @@ function Header() {
         )}
 
         {isDropdownOpen === "about" && (
-          <div className="absolute z-10 top-[81px] right-[10px] bg-customBlue shadow-lg p-2 rounded-md text-white dropdown-menu">
+          <div className="absolute z-10 top-[85px] right-[100px] bg-orange-500 w-32 shadow-lg p-2 rounded-md text-white dropdown-menu">
             <div className="flex flex-col items-start space-y-2 z-20">
               <Link to="/about-us" className="p-2" onClick={closeDropdown}>
                 About Us
