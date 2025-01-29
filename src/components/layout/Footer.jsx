@@ -1,51 +1,84 @@
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaEnvelope } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+
 
 export default function Footer() {
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
-    <footer className="bg-white text-gray-900 py-10 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
-        <img
-            src="http://www.nra.org.np/assets/image/nra-logo.png"
-            alt="Nepal Remitters Association"
-            className="w-full h-20"
-          />
-
-        </div>
-        
-        <div className="mt-6 md:mt-0 flex flex-col gap-2 text-sm">
-          <h3 className="font-bold text-2xl">Menu Links</h3>
-          <a href="#" className="hover:text-blue-500">Home</a>
-          <a href="#" className="hover:text-blue-500">News and Updates</a>
-          <a href="#" className="hover:text-blue-500">Message From Central Bank</a>
-          <a href="#" className="hover:text-blue-500">Remittance Overview in Nepal</a>
-          <a href="#" className="hover:text-blue-500">Members</a>
-        </div>
-
-        <div className="mt-6 md:mt-0 flex flex-col gap-2 text-sm">
-          <h3 className="font-bold text-2xl">Address</h3>
-          <p>📍 Kamalpokhari, Kathmandu, Nepal</p>
-          <p>📞 +977-1-433166</p>
-          <p>📧 contact@nra.org.np</p>
-          <div className="mt-6 md:mt-0 flex flex-col gap-2 text-sm">
-          <h3 className="font-bold text-xl">Get In Touch</h3>
-          <div className="flex gap-4 text-xl">
-            <a href="#" className="hover:text-blue-500"><FaFacebook /></a>
-            <a href="#" className="hover:text-blue-500"><FaTwitter /></a>
-            <a href="#" className="hover:text-blue-500"><FaInstagram /></a>
+    <footer className="bg-gray-900 text-gray-300 pt-16 px-6 md:px-12 lg:px-20 font-poppins">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Company Info */}
+        <div>
+          <img className="w-32 md:w-48" src="http://www.nra.org.np/assets/image/nra-logo.png" alt="Logo" />
+          <p className="mt-4 text-sm">
+            We take the time to understand your unique needs & goals, offering tailored advice that drives real results.
+          </p>
+          <div className="flex space-x-4 mt-4">
+            <FaFacebookF className="text-xl cursor-pointer hover:text-white" />
+            <FaTwitter className="text-xl cursor-pointer hover:text-white" />
+            <FaLinkedinIn className="text-xl cursor-pointer hover:text-white" />
+            <FaYoutube className="text-xl cursor-pointer hover:text-white" />
           </div>
         </div>
+
+        {/* Products */}
+        <div>
+          <h3 className="text-white text-lg font-semibold">Products</h3>
+          <ul className="mt-4 space-y-4 ">
+            {['Tailorfit', 'InnoFlow', 'Data Forge', 'Vision Edge', 'Flexi Build'].map((product) => (
+              <li key={product} className="hover:text-white cursor-pointer text-sm">{product}</li>
+            ))}
+          </ul>
         </div>
 
-        
-      </div>
-      
-      <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row justify-between items-center border-t pt-4 text-xs text-gray-600">
-        <p>&copy; 2021 Nepal Remitters Association | All rights reserved.</p>
-        <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-blue-500">Privacy Policy</a>
-          <a href="#" className="hover:text-blue-500">Terms & Condition</a>
+        {/* Location & Contact */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h3 className="text-white text-lg font-semibold">Address</h3>
+            <p className="mt-4 text-sm">Kamalpokhari</p>
+            <p className="mt-2 text-sm">Kathmandu, Nepal</p>
+          </div>
+
+            <div>
+            <h4 className="text-white font-semibold  text-lg">Get In Touch</h4>
+          <p className="mt-4 text-sm">contact@nra.org.np</p>
+          <p className="mt-2 text-sm font-bold text-white">+977-9817672867</p>
+            </div>
+          
         </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-white text-lg font-semibold">Subscribe Newsletter</h3>
+          <p className="mt-4 text-sm">Subscribe to our newsletter to get more updates</p>
+          <form onSubmit={handleSubmit(onSubmit)} className="flex mt-4">
+            <div className="relative flex-1">
+              <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-900" />
+              <input
+                type="email"
+                {...register("email")}
+                placeholder="Email Address"
+                className="w-full px-10 py-2 rounded-l-lg text-black focus:outline-none text-sm"
+              />
+            </div>
+            <button type="submit" className="px-4 py-2 text-sm rounded-r-lg text-white bg-blue-900 hover:bg-orange-400 focus:outline-none">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm ">
+        <p>&copy; 2021 <span className="text-white font-semibold">Nepal Remitters Association</span> - All rights reserved.</p>
+        <div className="flex space-x-6 mt-4 md:mt-0  ">
+          <p className="hover:text-white cursor-pointer">Home</p>
+          <p className="hover:text-white cursor-pointer">About</p>
+          <p className="hover:text-white cursor-pointer">Privacy Policy</p>
+          <p className="hover:text-white cursor-pointer">Contact</p>
+        </div>
+
       </div>
     </footer>
   );
