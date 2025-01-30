@@ -110,7 +110,7 @@ function Header() {
                   <HiChevronDoubleRight className={`ml-1 transition-transform ${isDropdownOpen === item.name ? "rotate-90" : "rotate-0"}`} />
                 </span>
                 {isDropdownOpen === item.name && (
-                  <div className="absolute top-full mt-2 bg-white shadow-lg p-2 rounded-md text-black">
+                  <div className="absolute top-full mt-2 bg-white shadow-lg p-2 rounded-md text-black z-50">
                     {item.dropdown.map((page, index) => (
                       <Link key={page} to={`/${item.paths[index]}`} className="block p-2 hover:text-orange-400" onClick={closeDropdown}>
                         {page}

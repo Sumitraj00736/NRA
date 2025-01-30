@@ -8,23 +8,23 @@ import { Link } from "react-router-dom";
 const quickLinks = [
   {
     title: 'Home',
-    link: ''
+    link: '/'
   },
   {
     title: 'Acts & Regulations',
-    link: 'acts-regulations'
+    link: '/acts-regulations'
   },
   {
-    title: 'Our Team',
-    link: 'teams'
+    title: 'About Us',
+    link: '/about-us'
   },
   {
     title: 'Message From Central Bank',
-    link: 'message-from-central-bank'
+    link: '/message-from-central-bank'
   },
   {
     title: 'Remittance Overview in Nepal',
-    link: 'remittance-overview'
+    link: '/remittance-overview'
   }
 ]
 
@@ -57,12 +57,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Products */}
+        
         <div>
           <h3 className="text-white text-lg font-semibold">Quick Links</h3>
           <ul className="mt-4 space-y-4">
             {quickLinks.map((product, index) => (
-              <Link to={product.link} key={index}>
+              <Link to={product.link} key={index} onClick={handleScrollToTop}>
                 <li className="hover:text-white cursor-pointer text-sm mt-4">{product.title}</li>
               </Link>
             ))}
