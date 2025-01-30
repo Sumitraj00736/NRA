@@ -10,6 +10,7 @@ import About from "./pages/About.jsx";
 import FAQs from "./pages/FAQs.jsx";
 import PrivacyPolicies from "./pages/PrivacyPolicies.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+import ActsAndRegulations from "./pages/ActsAndRegulations.jsx";
 
 
 
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
         path:"/terms-and-conditions",
         element:<TermsAndConditions/>
       },
+      {
+        path:"/acts-regulations",
+        element:<ActsAndRegulations/>
+        
+      }
     ],
   },
 ]);
