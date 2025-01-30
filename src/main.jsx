@@ -4,6 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import NewsList from "./components/Updatess/News/NewsList.jsx";
+import NewsArticle from "./components/Updatess/News/NewsArticle.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
         path: "",
         element: <Home />,
       },
+      {
+        path:"/news" ,
+        element: <NewsList/>
+      },
+      {
+        path:"/news/:title",
+        element:<NewsArticle/>
+      }
       
     ],
   },

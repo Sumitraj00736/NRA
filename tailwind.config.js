@@ -16,7 +16,7 @@ export default {
         // customBlue: "rgba(13, 23, 77, 1)",
         // customSky: '#2b9af3',
         customBlue:"#193d8b",
-        custoOrange:"#e98509"
+        customOrange:"#e98509"
 
       },
       fontFamily: {
