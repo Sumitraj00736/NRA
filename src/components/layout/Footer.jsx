@@ -1,18 +1,50 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import logo from "../../assets/Images/nra-logo.png";
+import { Link } from "react-router-dom";
 
+
+const quickLinks = [
+  {
+    title: 'Home',
+    link: ''
+  },
+  {
+    title: 'Acts & Regulations',
+    link: 'acts-regulations'
+  },
+  {
+    title: 'Our Team',
+    link: 'teams'
+  },
+  {
+    title: 'Message From Central Bank',
+    link: 'message-from-central-bank'
+  },
+  {
+    title: 'Remittance Overview in Nepal',
+    link: 'remittance-overview'
+  }
+]
 
 export default function Footer() {
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 px-6 md:px-12 lg:px-20 font-poppins">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
-          <img className="w-32 md:w-48" src="http://www.nra.org.np/assets/image/nra-logo.png" alt="Logo" />
+          <img className="w-32 md:w-48 -ml-3" src={logo} alt="Logo" />
           <p className="mt-4 text-sm">
             We take the time to understand your unique needs & goals, offering tailored advice that drives real results.
           </p>
@@ -26,10 +58,12 @@ export default function Footer() {
 
         {/* Products */}
         <div>
-          <h3 className="text-white text-lg font-semibold">Products</h3>
-          <ul className="mt-4 space-y-4 ">
-            {['Tailorfit', 'InnoFlow', 'Data Forge', 'Vision Edge', 'Flexi Build'].map((product) => (
-              <li key={product} className="hover:text-white cursor-pointer text-sm">{product}</li>
+          <h3 className="text-white text-lg font-semibold">Quick Links</h3>
+          <ul className="mt-4 space-y-4">
+            {quickLinks.map((product, index) => (
+              <Link to={product.link} key={index}>
+                <li className="hover:text-white cursor-pointer text-sm mt-4">{product.title}</li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -42,12 +76,12 @@ export default function Footer() {
             <p className="mt-2 text-sm">Kathmandu, Nepal</p>
           </div>
 
-            <div>
+          <div>
             <h4 className="text-white font-semibold  text-lg">Get In Touch</h4>
-          <p className="mt-4 text-sm">contact@nra.org.np</p>
-          <p className="mt-2 text-sm font-bold text-white">+977-9817672867</p>
-            </div>
-          
+            <p className="mt-4 text-sm">contact@nra.org.np</p>
+            <p className="mt-2 text-sm font-bold text-white">+977-9817672867</p>
+          </div>
+
         </div>
 
         {/* Newsletter */}
@@ -70,13 +104,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm ">
-        <p>&copy; 2021 <span className="text-white font-semibold">Nepal Remitters Association</span> - All rights reserved.</p>
+      <div className="border-t border-white mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-sm ">
+        <p>&copy; 2021 <span className="text-white font-semibold">Nepal Remitters Association</span> - Powered by Finclusive Tech</p>
         <div className="flex space-x-6 mt-4 md:mt-0  ">
-          <p className="hover:text-white cursor-pointer">Home</p>
-          <p className="hover:text-white cursor-pointer">About</p>
-          <p className="hover:text-white cursor-pointer">Privacy Policy</p>
-          <p className="hover:text-white cursor-pointer">Contact</p>
+          <Link to="/privacy-policy">
+            <p className="hover:text-white cursor-pointer underline"
+            onClick={handleScrollToTop}
+            >Privacy Policy</p>
+          </Link>
+          <Link to="terms-and-conditions">
+          <p className="hover:text-white cursor-pointer underline"
+          onClick={handleScrollToTop}
+          >Terms & Conditions</p>
+          </Link>
         </div>
 
       </div>

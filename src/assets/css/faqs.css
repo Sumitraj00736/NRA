@@ -1,0 +1,17 @@
+.faq-item {
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden; /* Prevents overflow when collapsed */
+  }
+  
+  .faq-content {
+    max-height: 0; /* Start with a max-height of 0 */
+    transition: max-height 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .faq-content.open {
+    max-height: 1000px; /* Set a large enough max-height to accommodate content */
+  }
+  
+  .spacing{
+    line-height: 44px;
+  }

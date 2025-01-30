@@ -6,6 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import NewsList from "./components/Updatess/News/NewsList.jsx";
 import NewsArticle from "./components/Updatess/News/NewsArticle.jsx";
+import About from "./pages/About.jsx";
+import FAQs from "./pages/FAQs.jsx";
+import PrivacyPolicies from "./pages/PrivacyPolicies.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,8 +29,23 @@ const router = createBrowserRouter([
       {
         path:"/news/:title",
         element:<NewsArticle/>
-      }
-      
+      },
+      {
+        path:"/about-us",
+        element:<About/>
+      },
+      {
+        path:"/faqs",
+        element:<FAQs/>
+      },
+      {
+        path:"/privacy-policy",
+        element:<PrivacyPolicies/>
+      },
+      {
+        path:"/terms-and-conditions",
+        element:<TermsAndConditions/>
+      },
     ],
   },
 ]);
