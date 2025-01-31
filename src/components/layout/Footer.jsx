@@ -1,6 +1,6 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-import logoWhite from "../../assets/Images/nra-white-logo.png";
+import logoWhite from "../../assets/Images/nra-main-logo-white.png";
 import { Link } from "react-router-dom";
 
 

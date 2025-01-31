@@ -6,7 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import logo from "../../assets/Images/nra-logo.png";
+import logo from "../../assets/Images/nra-main-logo.png";
 
 const topNavItems = [
   { label: "FAQs", link: "faqs" },
