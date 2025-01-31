@@ -84,7 +84,7 @@ function Header() {
               { icon: FaFacebookF, path: "https://facebook.com/nra_org_np" },
               { icon: FaXTwitter, path: "https://x.com/nra_org_np" },
               { icon: FaLinkedinIn, path: "https://linkedin.com/company/nra-org-np" },
-              { icon: FaInstagram, path: "https://instagram.com/nra_org_np" },
+          
             ].map(({ icon: Icon, path }) => (
               <a key={path} href={path} className="rounded-full p-2 border border-white hover:bg-white hover:text-blue-900 flex items-center w-7 h-7" target="_blank" rel="noopener noreferrer">
                 <Icon className="h-3 w-3" />
@@ -96,7 +96,9 @@ function Header() {
 
       {/* Sticky Navbar */}
       <div className={`transition-all duration-300 bg-white px-6 py-4 flex justify-between items-center text-[16px] mx-6 shadow-md ${isSticky ? "fixed top-0 left-0 z-50 shadow-lg w-full mx-auto rounded-none" : "-mt-8  rounded-xl "}`}>
-        <img className="w-32 md:w-48" src={logo} alt="Logo" />
+      <Link to="/">
+    <img className="w-32 md:w-48" src={logo} alt="Logo" />
+  </Link>
         <button onClick={toggleHamburgerMenu} className="lg:hidden text-black">
           <CgMenuRight className="h-8 w-8" />
         </button>
