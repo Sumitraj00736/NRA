@@ -91,7 +91,7 @@ function News() {
                 {items.map((item, i) => (
                     <div 
                         key={i} 
-                        className="relative group flex flex-col gap-4 px-2 cursor-pointer mb-6" 
+                        className="relative group flex flex-col gap-4 px-2 cursor-pointer -ml-4 mb-6" 
                         onClick={() => {
                             if (!isSliding) {
                                 navigate(`/news/${slugify(item.title)}`);

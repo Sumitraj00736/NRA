@@ -43,6 +43,13 @@ function Header() {
   const closeDropdown = () => setIsDropdownOpen(null);
   const toggleHamburgerMenu = () => setIsHamburgerMenuOpen((prev) => !prev);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => setIsSticky(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
@@ -72,7 +79,7 @@ function Header() {
                   {page.label}
                 </a>
               ) : (
-                <Link key={page.label} className="hover:text-orange-500 font-medium text-sm" to={`/${page.link}`}>
+                <Link key={page.label} className="hover:text-orange-500 font-medium text-sm" to={`/${page.link}`} onClick={handleScrollToTop}>
                   {page.label}
                 </Link>
               )
@@ -97,7 +104,7 @@ function Header() {
       {/* Sticky Navbar */}
       <div className={`transition-all duration-300 bg-white px-6 py-4 flex justify-between items-center text-[16px] mx-6 shadow-md ${isSticky ? "fixed top-0 left-0 z-50 shadow-lg w-full mx-auto rounded-none" : "-mt-8  rounded-xl "}`}>
       <Link to="/">
-    <img className="w-32 md:w-48" src={logo} alt="Logo" />
+    <img className="w-32 md:w-48" src={logo} alt="Logo"  onClick={handleScrollToTop}/>
   </Link>
         <button onClick={toggleHamburgerMenu} className="lg:hidden text-black">
           <CgMenuRight className="h-8 w-8" />
@@ -106,14 +113,21 @@ function Header() {
           {navItems.map((item) =>
             item.dropdown ? (
               <div key={item.name} className="relative">
-                <span onClick={() => toggleDropdown(item.name)} className={`cursor-pointer flex items-center font-medium ${isDropdownOpen === item.name ? "text-orange-500" : "hover:text-orange-500"}`}>
+                <span onClick={() => {
+                  toggleDropdown(item.name);
+                  
+                }
+              } className={`cursor-pointer flex items-center font-medium ${isDropdownOpen === item.name ? "text-orange-500" : "hover:text-orange-500"}`}>
                   {item.name}
                   <HiChevronDoubleRight className={`ml-1 transition-transform ${isDropdownOpen === item.name ? "rotate-90" : "rotate-0"}`} />
                 </span>
                 {isDropdownOpen === item.name && (
                   <div className="absolute top-full mt-2 bg-white shadow-lg p-2 rounded-md text-black z-50">
                     {item.dropdown.map((page, index) => (
-                      <Link key={page} to={`/${item.paths[index]}`} className="block p-2 hover:text-orange-400" onClick={closeDropdown}>
+                      <Link key={page} to={`/${item.paths[index]}`} className="block p-2 hover:text-orange-400" onClick={() => {
+                        closeDropdown();
+                        handleScrollToTop();
+                      }}>
                         {page}
                       </Link>
                     ))}
@@ -121,7 +135,7 @@ function Header() {
                 )}
               </div>
             ) : (
-              <Link key={item.path} to={item.path} className={`font-medium ${location.pathname === item.path ? "text-orange-500" : "hover:text-orange-500"}`}>
+              <Link key={item.path} to={item.path} className={`font-medium ${location.pathname === item.path ? "text-orange-500" : "hover:text-orange-500"}`} onClick={handleScrollToTop}>
                 {item.name}
               </Link>
             )

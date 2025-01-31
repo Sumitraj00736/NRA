@@ -41,6 +41,13 @@ function News() {
     const navigate = useNavigate();
     const [isSliding, setIsSliding] = useState(false);
 
+    const handleScrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+
     const settings = {
         dots: false,
         infinite: false,
@@ -91,12 +98,14 @@ function News() {
                 {items.map((item, i) => (
                     <div 
                         key={i} 
-                        className="relative group flex flex-col gap-4 px-2 cursor-pointer mb-6" 
+                        className="relative group flex flex-col gap-4  -ml-4 cursor-pointer mb-6" 
                         onClick={() => {
                             if (!isSliding) {
                                 navigate(`/news/${slugify(item.title)}`);
-                            }
-                        }}
+                            };
+                            handleScrollToTop();
+                        }
+                    }
                     >
                         <div className="relative w-90 h-72 rounded-lg overflow-hidden mb-2">
                             <img src={item.imgSrc} alt="" className="w-full h-full object-cover rounded-lg" />
