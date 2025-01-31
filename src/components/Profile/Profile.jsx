@@ -9,7 +9,7 @@ function Profile() {
     return (
         <motion.div 
             ref={ref}
-            className="w-full mx-auto max-w-7xl px-4 font-poppins my-8 mt-16"
+            className="w-full mx-auto max-w-7xl px-4 font-poppins my-8 mt-16 "
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
