@@ -3,15 +3,16 @@ import "swiper/css";
 import "../../assets/css/partners.css"
 
 const partners = [
-  { id: 1, logo: "https://nra.org.np/storage/images/partner/HIepzlu0my9YnWNxjLj3MWcAMf3SNoBdfCPbzdfU.png" },
-  { id: 2, logo: "https://nra.org.np/storage/images/partner/6uJBiTyCh19Zcb7Z5nXpjQPUXXEri8q4UCo6Iw9m.png" },
-  { id: 3, logo: "https://nra.org.np/storage/images/partner/51iIcqRxR1gBpw9c7RoM1hM8CuYyU41tkyZbY3kK.jpeg" },
-  { id: 4, logo: "https://nra.org.np/storage/images/partner/PvcxPwlR1qvnd13vrKRlrO4rawrgZ6xXs9B8EA0H.png" },
-  { id: 5, logo: "https://nra.org.np/storage/images/partner/byka3rhh7jMTfINQuwzYf1m5a6XbJD8wP6Qzvosm.png" },
-  { id: 6, logo: "https://nra.org.np/storage/images/partner/erWgu7SqsvIndx4pY1EnAHaoYgVsB3U3PgWrrSAR.png" },
-  { id: 7, logo: "https://nra.org.np/storage/images/partner/MRoLViTRbAUWrVmghW8EEetwImvismuwth1D0T1B.png" },
-  { id: 8, logo: "https://nra.org.np/storage/images/partner/DeH4CzeSTZZ7FrhpqkViqx5QlbugmWe0ICMOYt3l.png" },
+  { id: 1, logo: "https://i.ibb.co/RT95n7xf/Nepal-Remit.png" },
+  { id: 2, logo: "https://i.ibb.co/0pjB7m4w/Civil-Bank.png" },
+  { id: 3, logo: "https://i.ibb.co/ds2xhySH/Mahalaxmi.jpg" },
+  { id: 4, logo: "https://i.ibb.co/27cmFBhn/Jyoti-Bikash.png" },
+  { id: 5, logo: "https://i.ibb.co/hxLSXtvd/Prabhu.png" },
+  { id: 6, logo: "https://i.ibb.co/1fv3Mj1n/Sunrise.webp" },
+  { id: 7, logo: "https://i.ibb.co/KjHC3JrQ/GME.png" },
+  { id: 8, logo: "https://i.ibb.co/0j323MRc/century-bank-full-logo.jpg" },
 ];
+
 
 export default function OurPartnersSlider() {
   return (
