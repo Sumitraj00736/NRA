@@ -1,6 +1,5 @@
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaEnvelope } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-// import logo from "../../assets/Images/nra-logo.png";
 import logoWhite from "../../assets/Images/nra-white-logo.png";
 import { Link } from "react-router-dom";
 
@@ -47,7 +46,7 @@ export default function Footer() {
         <div>
           <img className="w-32 md:w-52 -ml-3" src={logoWhite} alt="Logo" />
           <p className="mt-4 text-sm">
-            We take the time to understand your unique needs & goals, offering tailored advice that drives real results.
+          The Nepal Remitters Association (NRA) is the umbrella organization representing remittance companies and financial institutions operating in Nepal.
           </p>
           <div className="flex space-x-4 mt-4">
             <FaFacebookF className="text-xl cursor-pointer hover:text-white" />

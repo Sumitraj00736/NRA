@@ -1,16 +1,26 @@
-import React, { useState } from "react";
-import { FaCheck } from "react-icons/fa6";
-import elipse from "../../assets/Images/elipse.png";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import signature from "../../assets/Images/president-signature.png";
 
 function Profile() {
-    const [showMore, setShowMore] = useState(false);
+    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
-        <div className="w-full mx-auto max-w-7xl px-4 font-poppins my-8 mt-16">
-            <div className="flex md:flex-row flex-col gap-10 md:items-start items-center ">
-                <div className="w-full flex flex-col items-center md:items-start">
+        <motion.div 
+            ref={ref}
+            className="w-full mx-auto max-w-7xl px-4 font-poppins my-8 mt-16"
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+        >
+            <div className="flex md:flex-row flex-col gap-10 md:items-start items-center">
+                <motion.div 
+                    className="w-full flex flex-col items-center md:items-start"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
                     <h1 className="text-md text-customOrange font-semibold tracking-wider mb-4">
                         MESSAGE FROM THE LEADER
                     </h1>
@@ -18,56 +28,46 @@ function Profile() {
                         Hear From Our <span className="text-customBlue">President</span>
                     </h2>
                     <p className="text-md text-gray-500">
-                        Namaste, <br/><br />    
+                        Namaste, <br /><br />
                         It is an honor to lead the Nepal Remitters Association (NRA), representing remittance companies and financial institutions that connect millions of Nepalis worldwide with their loved ones. Remittances are vital to Nepal’s economy, supporting countless households and driving national development. NRA is committed to ensuring secure, efficient, and affordable money transfers.
-                        <br/><br />
+                        <br /><br />
                     </p>
-
-                    {/* Extra Content Displayed when showMore is true */}
-                    <AnimatePresence>
-                        {showMore && (
-                            <motion.div
-                                initial={{ opacity: 0, y: -10 }} // Start faded out & slightly above
-                                animate={{ opacity: 1, y: 0 }} // Fade in & slide down
-                                exit={{ opacity: 0, y: -10 }} // Fade out & slide up
-                                transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
-                            >
-                                <p className="text-md text-gray-500">
-                                    We prioritize innovation, transparency, and advocacy to strengthen the remittance ecosystem. Our mission is to empower our members and safeguard the seamless flow of hard-earned remittances. <br /> <br />
-                                    I sincerely thank our members and partners for their support. Together, we will enhance Nepal’s remittance industry and build a more prosperous future. Explore our website to learn more. <br /><br />
-                                </p>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    <img
-                        src={signature}
+                    <p className="text-md text-gray-500">
+                        We prioritize innovation, transparency, and advocacy to strengthen the remittance ecosystem. Our mission is to empower our members and safeguard the seamless flow of hard-earned remittances. <br /> <br />
+                        I sincerely thank our members and partners for their support. Together, we will enhance Nepal’s remittance industry and build a more prosperous future. Explore our website to learn more. <br /><br />
+                    </p>
+                    <motion.img 
+                        src={signature} 
                         className="w-28 h-full"
+                        initial={{ opacity: 0 }}
+                        animate={inView ? { opacity: 1 } : {}}
+                        transition={{ duration: 1, delay: 0.5 }}
                     />
+                </motion.div>
 
-                    <button
-                        className="bg-customBlue hover:bg-customOrange py-3 px-6 text-white rounded-xl text-md font-semibold shadow-sm shadow-customBlue hover:shadow-customOrange mt-4"
-                        onClick={() => setShowMore(!showMore)}
+                <motion.div 
+                    className="relative"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                    <img 
+                        src="https://i.ibb.co/M57DVVGg/ritesh-mittal.jpg" 
+                        alt="President" 
+                        className="w-full md:h-full h-1/2 rounded-xl z-50 shadow-md shadow-customOrange"
+                    />
+                    <motion.div 
+                        className="p-3 border-4 border-customBlue rounded-full bg-customBlue md:absolute md:-left-20 md:bottom-8 w-1/2 text-center md:text-left mt-4 block mx-auto shadow-sm shadow-customOrange"
+                        initial={{ scale: 0 }}
+                        animate={inView ? { scale: 1 } : {}}
+                        transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                        {showMore ? "Read Less" : "Read More"}
-                    </button>
-                </div>
-
-                <div className="relative " >
-                    <img src="https://i.ibb.co/M57DVVGg/ritesh-mittal.jpg" alt="" className=" w-full md:h-full h-1/2 rounded-xl z-50 shadow-md shadow-customOrange" />
-                    {/* <motion.div
-                        animate={{ rotate: 360 }} // Rotates from 0° to 360°
-                        transition={{ repeat: Infinity, duration: 10, ease: "linear" }} // Infinite rotation
-                    >
-                        <img src={elipse} alt="Rotating Elipse" className="h-full w-40 " />
-                    </motion.div> */}
-                    <div className="p-3 border-4 border-customBlue rounded-full bg-customBlue md:absolute md:-left-20 md:bottom-8 w-1/2 text-center md:text-left mt-4 block mx-auto shadow-sm shadow-customOrange">
                         <p className="text-lg font-semibold ml-2 text-white">Ritesh Mittal</p>
-                        <p className="text-md font-normal text-white ml-2 ">President</p>
-                    </div>
-                </div>
+                        <p className="text-md font-normal text-white ml-2">President</p>
+                    </motion.div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

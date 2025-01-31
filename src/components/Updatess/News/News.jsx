@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PiArrowUpRightBold, PiArrowCircleUpRightLight } from "react-icons/pi";
 import { HiChevronDoubleRight } from "react-icons/hi";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Function to generate URL-friendly slugs
 const slugify = (text) => {
     return text
         .toString()
@@ -14,29 +16,58 @@ const slugify = (text) => {
 
 const items = [
     {
-        imgSrc: "https://images.unsplash.com/photo-1611516491426-03025e6043c8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Title 1",
-        description: "Description 1",
+        imgSrc: "https://i.ibb.co/HRyynjY/3.png",
+        title: "19th Annual General Meeting of Nepal Remitters Association",
+        date: "Poush 18, 2081",
     },
     {
-        imgSrc: "https://images.unsplash.com/photo-1611516491426-03025e6043c8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Title 2",
-        description: "Description 2",
+        imgSrc: "https://i.ibb.co/99c0zMc1/nrb-photo.jpg",
+        title: "नेपाल राष्ट्र बैंकले बैंकिङ प्रणालीबाट आज फेरि रु. ३० अर्ब तान्दै",
+        date: "Poush 18, 2081",
     },
     {
-        imgSrc: "https://images.unsplash.com/photo-1611516491426-03025e6043c8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Title 3",
-        description: "Description 3",
+        imgSrc: "https://i.ibb.co/Kj5VNHXM/REmit-MOU.jpg",
+        title: "राष्ट्रिय वाणिज्य बैंक र निओ रेमिट तथा युनाईटेड रेमिट बीच भुक्तानी सम्झौता",
+        date: "Asoj 12, 2081",
     },
     {
-        imgSrc: "https://images.unsplash.com/photo-1611516491426-03025e6043c8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        title: "Title 4",
-        description: "Description 4",
+        imgSrc: "https://i.ibb.co/gpgCQzL/remitance.jpg",
+        title: "एक खर्ब ३६ अर्ब विप्रेषण देशभित्र भित्रियो",
+        date: "Asoj 11, 2081",
     },
 ];
 
 function News() {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
+    const [isSliding, setIsSliding] = useState(false);
+
+    const settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 3.5,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        touchThreshold: 10, 
+        beforeChange: () => setIsSliding(true),
+        afterChange: () => setIsSliding(false),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2.5,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    };
 
     return (
         <div className='mx-auto w-full max-w-7xl font-poppins px-2 mb-4 mt-20'>
@@ -56,30 +87,32 @@ function News() {
                 </button>
             </div>
 
-            <div className='flex lg:flex-row flex-col gap-x-8'>
+            <Slider {...settings} className='mt-8'>
                 {items.map((item, i) => (
                     <div 
                         key={i} 
-                        className="relative group flex flex-col gap-4 mt-8 py-4 w-96 cursor-pointer"
-                        onClick={() => navigate(`/news/${slugify(item.title)}`)} // Use slugify
+                        className="relative group flex flex-col gap-4 px-2 cursor-pointer mb-6" 
+                        onClick={() => {
+                            if (!isSliding) {
+                                navigate(`/news/${slugify(item.title)}`);
+                            }
+                        }}
                     >
-                        {/* Image Container */}
-                        <div className="relative w-96 h-72 rounded-lg overflow-hidden">
+                        <div className="relative w-90 h-72 rounded-lg overflow-hidden mb-2">
                             <img src={item.imgSrc} alt="" className="w-full h-full object-cover rounded-lg" />
-                            {/* Arrow Icon (Appears on Hover) */}
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <PiArrowCircleUpRightLight className="text-white text-5xl" />
                             </div>
                         </div>
-
-                        {/* Text Content */}
                         <div className="flex flex-col gap-1">
-                            <h1 className="text-lg font-semibold">{item.title}</h1>
-                            <p className="text-sm text-gray-600">{item.description}</p>
+                            <h1 className="text-lg font-semibold">
+                                {item.title.length > 30 ? `${item.title.slice(0, 30)}...` : item.title}
+                            </h1>
+                            <p className="text-sm text-gray-600">{item.date}</p>
                         </div>
                     </div>
                 ))}
-            </div>
+            </Slider>
         </div>
     );
 }

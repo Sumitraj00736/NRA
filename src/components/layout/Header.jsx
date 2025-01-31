@@ -9,7 +9,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import logo from "../../assets/Images/nra-logo.png";
 
 const topNavItems = [
-  { label: "Company", link: "company" },
   { label: "FAQs", link: "faqs" },
   { label: "Exchange Rates", link: "http://fedan.com.np/" },
 ];
@@ -19,8 +18,8 @@ const navItems = [
   { name: "Acts & Regulations", path: "/acts-regulations" },
   {
     name: "Updates",
-    dropdown: ["News", "Gallery", "Events & Activities"],
-    paths: ["news", "gallery", "events-activities"],
+    dropdown: ["News", "Gallery"],
+    paths: ["news", "gallery"],
   },
   {
     name: "About",

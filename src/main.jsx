@@ -11,6 +11,8 @@ import FAQs from "./pages/FAQs.jsx";
 import PrivacyPolicies from "./pages/PrivacyPolicies.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import ActsAndRegulations from "./pages/ActsAndRegulations.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
+import GalleryPage from "./pages/Gallery.jsx";
 
 
 
@@ -50,6 +52,16 @@ const router = createBrowserRouter([
       {
         path:"/acts-regulations",
         element:<ActsAndRegulations/>
+        
+      },
+      {
+        path:"/contact-us",
+        element:<ContactPage/>
+        
+      },
+      {
+        path:"/gallery",
+        element:<GalleryPage/>
         
       }
     ],

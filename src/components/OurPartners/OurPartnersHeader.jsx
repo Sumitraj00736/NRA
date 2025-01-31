@@ -44,17 +44,7 @@ function OurPartnersHeader() {
                 <PiArrowUpRightBold className='text-customOrange' size={22} />
                 <h1 className='text-lg font-medium'>Our Partners</h1>
             </span>
-            <h1 className='text-5xl font-light mb-2'>Have a Look on Our Partners</h1>
-            <div className='flex lg:flex-row flex-col lg:justify-between lg:items-center gap-y-12 lg:gap-y-0'>
-                <h1 className='text-5xl font-semibold text-customBlue'>Cooperative Experience</h1>
-                {/* <button 
-                    className='flex items-center gap-2 border rounded-lg py-2 px-4 text-customBlue border-customBlue w-fit hover:text-white hover:bg-customOrange hover:border-none'
-                    onClick={() => navigate("/news")}
-                >
-                    <p className='font-medium'>View All Partners</p>
-                    <HiChevronDoubleRight />
-                </button> */}
-            </div>
+            
         </div>
     );
 }
