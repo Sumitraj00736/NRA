@@ -6,7 +6,7 @@ function ActsAndRegulations() {
   return (
     <div>
         <ActsAndRegulationBanner />
-      <ActsAndRegulation/>
+        <ActsAndRegulation/>
 
     </div>
   )

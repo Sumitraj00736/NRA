@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -51,12 +51,12 @@ const settings = {
 };
 
 const HeroSlider = () => {
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
-    <div className="relative h-full w-full flex justify-center items-center -z-50 ">
-      <Slider {...settings} className="w-full h-full bg-customBlue bg-opacity-5 ">
+    <div className="relative h-full w-full flex justify-center items-center -z-50  ">
+      <Slider {...settings} className=" h-full w-full bg-customBlue ">
         {slides.map((slide) => (
           <motion.div
             key={slide.id}
@@ -65,7 +65,7 @@ const HeroSlider = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 1, ease: [0.4, 0.0, 0.2, 1] }}
             whileHover={{ scale: 1.02 }}
-            className="flex justify-center h-full items-center  "
+            className="flex justify-center h-full items-center w-full  "
           >
             <div className="relative w-full overflow-hidden ">
               {/* Background Image with Parallax Effect */}

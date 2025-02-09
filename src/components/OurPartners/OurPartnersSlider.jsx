@@ -8,7 +8,7 @@ const OurPartnersSlider = () => {
     { id: 4, logo: "https://i.ibb.co/27cmFBhn/Jyoti-Bikash.png" },
     { id: 5, logo: "https://i.ibb.co/hxLSXtvd/Prabhu.png" },
     { id: 6, logo: "https://i.ibb.co/tw8P8Pxp/Logo-Dc-Ir4uag.png" },
-    { id: 7, logo: "https://i.ibb.co/KjHC3JrQ/GME.png" },
+    { id: 7, logo: "https://i.ibb.co/HDJZr3z6/logo-dark.png" },
     { id: 8, logo: "https://i.ibb.co/svQ8m4Cy/newlogo.png" },
     { id: 9, logo: "https://i.ibb.co/gFBzpjM1/CG-Finco.png" },
     { id: 10, logo: "https://i.ibb.co/Q7W3RbjZ/city-express-logo-1.png" },
@@ -29,7 +29,6 @@ const OurPartnersSlider = () => {
     { id: 25, logo: "https://i.ibb.co/7Jqm1Mdn/Logo.png" },
     { id: 26, logo: "https://i.ibb.co/Dfq4X0TT/becdb806252d1cd9538739fcfc339427-148.jpg" },
     { id: 27, logo: "https://i.ibb.co/5tT5L60/ctzbank-international-limited-cover-e-2147483647-v-beta-t-e96-Hiv-Nb-Fwc-ZJ0-CQCBy-R-OKta-HRSx-Uvr-C.jpg" },
-    { id: 28, logo: "https://i.ibb.co/HDJZr3z6/logo-dark.png" },
   ];
 
   return (
