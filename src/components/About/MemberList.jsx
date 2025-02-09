@@ -37,7 +37,7 @@ const MemberList = () => {
         {partners.map((partner) => (
           <div
             key={partner.id}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center justify-between group"
+            className="bg-white rounded-lg shadow-[0_0px_10px_rgba(0,0,0,0.18)] hover:shadow-[0_0px_10px_rgba(0,0,0,0.3)] transition-shadow duration-300 p-4 flex flex-col items-center justify-between group"
           >
             <div className="w-full h-48 relative mb-4">
               <img
