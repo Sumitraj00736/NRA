@@ -56,7 +56,7 @@ const HeroSlider = () => {
 
   return (
     <div className="relative h-full w-full flex justify-center items-center -z-50 ">
-      <Slider {...settings} className="w-[108%] h-full bg-customBlue bg-opacity-5">
+      <Slider {...settings} className="w-full h-full bg-customBlue bg-opacity-5 ">
         {slides.map((slide) => (
           <motion.div
             key={slide.id}
