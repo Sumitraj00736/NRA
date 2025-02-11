@@ -16,6 +16,11 @@ const slugify = (text) => {
 
 const items = [
     {
+        imgSrc: "https://i.ibb.co/zhPPfW5W/blog-news.webp",
+        title: "यस्तो छ आजका लागि विदेशी मुद्राको विनिमय दर",
+        date: "Magh 18, 2081",
+    },
+    {
         imgSrc: "https://i.ibb.co/HRyynjY/3.png",
         title: "19th Annual General Meeting of Nepal Remitters Association",
         date: "Poush 18, 2081",
@@ -23,12 +28,7 @@ const items = [
     {
         imgSrc: "https://i.ibb.co/99c0zMc1/nrb-photo.jpg",
         title: "नेपाल राष्ट्र बैंकले बैंकिङ प्रणालीबाट आज फेरि रु. ३० अर्ब तान्दै",
-        date: "Poush 18, 2081",
-    },
-    {
-        imgSrc: "https://i.ibb.co/Kj5VNHXM/REmit-MOU.jpg",
-        title: "राष्ट्रिय वाणिज्य बैंक र निओ रेमिट तथा युनाईटेड रेमिट बीच भुक्तानी सम्झौता",
-        date: "Asoj 12, 2081",
+        date: "Poush 12, 2081",
     },
     {
         imgSrc: "https://i.ibb.co/gpgCQzL/remitance.jpg",

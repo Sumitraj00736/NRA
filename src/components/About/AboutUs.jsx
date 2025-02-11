@@ -16,6 +16,11 @@ const profile = [
         imgSrc: "https://i.ibb.co/8gm2XPm6/ritesh-mittal.jpg"
     },
     {
+        position: "IPP",
+        name: "Chandra Tandon",
+        imgSrc: "https://i.ibb.co/b503wxvx/tandon.jpg"
+    },
+    {
         position: "Vice President",
         name: "Sanjaya Sigdel",
         imgSrc: "https://i.ibb.co/HTJvDNJD/sanjay-sigdel.jpg"
@@ -26,14 +31,14 @@ const profile = [
         imgSrc: "https://i.ibb.co/Pvgrp6F8/diwakar-poudel.jpg"
     },
     {
-        position: "Secretary",
-        name: "Rameshwor Sapkota",
-        imgSrc: "https://i.ibb.co/FqK10rvg/rameshor-sapkota.jpg"
-    },
-    {
         position: "Treasurer",
         name: "Sanjib Pathak",
         imgSrc: "https://i.ibb.co/jkWKhKtW/sanjib-pathak.jpg"
+    },
+    {
+        position: "Secretary",
+        name: "Rameshwor Sapkota",
+        imgSrc: "https://i.ibb.co/FqK10rvg/rameshor-sapkota.jpg"
     },
     {
         position: "Executive Member",

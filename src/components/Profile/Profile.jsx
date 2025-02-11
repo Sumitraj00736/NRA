@@ -36,13 +36,7 @@ function Profile() {
                         We prioritize innovation, transparency, and advocacy to strengthen the remittance ecosystem. Our mission is to empower our members and safeguard the seamless flow of hard-earned remittances. <br /> <br />
                         I sincerely thank our members and partners for their support. Together, we will enhance Nepal’s remittance industry and build a more prosperous future. Explore our website to learn more. <br /><br />
                     </p>
-                    <motion.img 
-                        src={signature} 
-                        className="w-28 h-full"
-                        initial={{ opacity: 0 }}
-                        animate={inView ? { opacity: 1 } : {}}
-                        transition={{ duration: 1, delay: 0.5 }}
-                    />
+                    
                 </motion.div>
 
                 <motion.div 

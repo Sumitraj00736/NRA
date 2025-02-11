@@ -8,23 +8,18 @@ const slides = [
   { 
     id: 1, 
     // title: <>Empowering <br /><span className="text-orange-500">Communities</span></>, 
-    image: "https://i.ibb.co/9kwTZhbF/1.png" 
+    image: "https://i.ibb.co/4ZwLFrHX/Whats-App-Image-2025-02-02-at-13-48-06.jpg" 
   },
   { 
     id: 2, 
     // title: <>Building a Resilient <br /> <span className="text-orange-500" >Future</span></>, 
-    image: "https://i.ibb.co/XkjZRQXd/2.png" 
+    image: "https://i.ibb.co/jPfMsCcS/Whats-App-Image-2025-02-02-at-13-48-06-1.jpg" 
   },
   { 
     id: 3, 
     // title: <> Sustainable <br /><span className="text-orange-500">Development</span></>, 
-    image: "https://i.ibb.co/HRyynjY/3.png" 
+    image: "https://i.ibb.co/tM3bq7WS/Whats-App-Image-2025-02-02-at-13-48-38.jpg" 
   },
-  { 
-    id: 4, 
-    // title: <>Innovation for <br /><span className="text-orange-500">Progress</span></>, 
-    image: "https://i.ibb.co/Kps44xtK/4.png" 
-  }
 ];
 
 const settings = {
@@ -34,15 +29,15 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   centerMode: false,
-  centerPadding: "0", // Remove padding for a more natural left-to-right effect
+  centerPadding: "0", 
   focusOnSelect: true,
   autoplay: true,
   autoplaySpeed: 4000,
   arrows: false,
-  draggable: true, // Allow dragging of the slides
-  swipeToSlide: true, // Allow swipe-to-slide for mobile
-  swipe: true, // Enable swipe effect
-  rtl: false, // Ensure the slide direction is left to right
+  draggable: true, 
+  swipeToSlide: true, 
+  swipe: true, 
+  rtl: false, 
   responsive: [
     { breakpoint: 1024, settings: { centerPadding: "20px" } },
     { breakpoint: 768, settings: { centerPadding: "10px" } },
@@ -72,14 +67,14 @@ const HeroSlider = () => {
               <motion.img
                 src={slide.image}
                 alt={slide.title}
-                className="h-full w-full object-cover" // Ensures the image covers the full area without distortion
+                className="h-full w-full object-cover"
                 style={{ scale }}
                 transition={{ duration: 5, ease: "easeInOut" }}
                 whileHover={{ scale: 1.05 }}
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute pl-10 md:pl-60 inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90 flex flex-col justify-center">
+              <div className="absolute pl-10 md:pl-60 inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/10 flex flex-col justify-center">
                 <motion.h2
                   className="text-sm md:text-5xl font-extrabold text-white tracking-wide drop-shadow-lg"
                   initial={{ opacity: 0, y: 40 }}
@@ -103,9 +98,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 0.2, scale: 1.05 }}
                   transition={{ duration: 0.6 }}
-                  style={{
-                    background: "radial-gradient(circle, rgba(255,255,255,0.15) 20%, transparent 70%)"
-                  }}
+                  
                 />
               </div>
             </div>

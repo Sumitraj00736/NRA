@@ -56,6 +56,10 @@ function PrivacyPolicy() {
           <h1 className='text-xl md:text-2xl font-semibold'>Cookies and Tracking Technologies</h1>
           <p className='text-sm md:text-base'>Our Website may use cookies and similar tracking technologies to enhance functionality and analyze traffic. By using the Website, you consent to the use of cookies in accordance with applicable laws. You may manage cookie preferences through your browser settings.</p>
         </div>
+        <div className='flex flex-col justify-center gap-2'>
+          <h1 className='text-xl md:text-2xl font-semibold'>Changes in Privacy Policy</h1>
+          <p className='text-sm md:text-base'>We reserve the right to update or modify this privacy policy at any time. Any changes will be posted on this page with an updated "Effective date". Your continued use of the website after such modifications constitutes acceptance of the revised privacy policy.</p>
+        </div>
       </div>
     </div>
   );

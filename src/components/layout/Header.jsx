@@ -63,7 +63,7 @@ function Header() {
         <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-4 gap-2">
           <div className="flex items-center gap-2">
             <MdEmail />
-            <span className="text-sm">contact@nra.org.np</span>
+            <span className="text-sm">info@nra.org.np</span>
           </div>
           <div className="flex items-center gap-2">
             <IoMdCall />
