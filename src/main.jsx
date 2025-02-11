@@ -13,6 +13,8 @@ import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import ActsAndRegulations from "./pages/ActsAndRegulations.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import GalleryPage from "./pages/Gallery.jsx";
+import MembersList from "./pages/MembersList.jsx";
+
 
 
 
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path:"/about-us",
         element:<About/>
+      },
+      {
+        path:"/member-list",
+        element:<MembersList/>
       },
       {
         path:"/faqs",

@@ -9,7 +9,7 @@ import OurPartners from '../components/OurPartners/OurPartners.jsx';
 const Home = () => {
   return (
     <>
-    <div className='overflow-x-hidden -mt-14  '>
+    <div className='overflow-x-hidden -mt-16  '>
       <HeroSlider/>
       <HeroCard/>
       <Profile/>

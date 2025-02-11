@@ -32,7 +32,7 @@ export default function InfoCards() {
 
     return (
         <div className="flex md:-mt-24 items-center justify-center font-poppins mt-8 scroll-smooth ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4  ">
                 {cardData.map((card, index) => {
                     const isExpanded = expandedCard === index;
                     const shortText = card.description.slice(0, 100) + "..."; // Truncate text

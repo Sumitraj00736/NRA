@@ -23,8 +23,8 @@ const navItems = [
   },
   {
     name: "About",
-    dropdown: ["About Us", "Remittance Overview", "Message from Central Bank"],
-    paths: ["about-us", "remittance-overview", "message-from-central-bank"],
+    dropdown: ["About Us", "Remittance Overview", "Message from Central Bank", "Member List"],
+    paths: ["about-us", "remittance-overview", "message-from-central-bank", "member-list"],
   },
   { name: "Contact Us", path: "/contact-us" },
 ];
