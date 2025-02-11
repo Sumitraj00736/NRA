@@ -38,11 +38,28 @@ const items = [
 function OurPartnersHeader() {
     const navigate = useNavigate(); // Initialize useNavigate
 
+    const navigateToMemberList = () => {
+        navigate('/member-list', { replace: true });
+    }
+
+    const handleScrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+
+
     return (
         <div className='mx-auto w-full max-w-7xl font-poppins px-2 mb-4 mt-20'>
-            <span className='inline-flex items-center gap-2 font-poppins border-2 px-4 py-2 rounded-xl mb-8 border-customOrange bg-customOrange bg-opacity-10'>
+            <span className='inline-flex items-center gap-2 font-poppins border-2 px-4 py-2 rounded-xl mb-8 border-customOrange bg-customOrange bg-opacity-10 cursor-pointer'
+            onClick={() => {
+                navigateToMemberList();
+                handleScrollToTop();
+            }}
+            >
                 <PiArrowUpRightBold className='text-customOrange' size={22} />
-                <h1 className='text-lg font-medium'>Our Partners</h1>
+                <h1 className='text-lg font-medium'>Our Members</h1>
             </span>
             
         </div>
