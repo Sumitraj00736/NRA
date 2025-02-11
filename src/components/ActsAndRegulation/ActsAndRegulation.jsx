@@ -4,6 +4,7 @@ import RemittanceCirculation from "../../assets/Images/Remittance_Circulation.we
 import RemittanceBylaws from "../../assets/Images/Remittance_Bylaws.gif";
 import RemittanceBylaws2079 from "../../assets/Images/RemittanceBylaws2079.jpeg";
 import FXMDCircular from "../../assets/Images/FXMD-Circular.jpeg";
+import NRB from "../../assets/Images/NRB.jpg";
 
 const items = [
     {
@@ -29,17 +30,28 @@ const items = [
         title: "FXMD Circular",
         description: "Foreign exchange management directives and compliance requirements.",
         pdfSrc: "/pdf/FXMD-Circular.pdf",
+    },
+    {
+        imgSrc: NRB,
+        title: "Other Important NRB Guidelines",
+        description: "Key regulations, compliance requirements, and operational standards for financial institutions",
+        pdfSrc: "",
+        redirect: "https://www.nrb.org.np/departments/fxm/"
     }
 ];
 
 function ActsAndRegulation() {
-    const handleDownload = (pdfSrc) => {
-        const link = document.createElement("a");
-        link.href = pdfSrc;
-        link.download = pdfSrc.split('/').pop(); // Extracts filename from URL
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    const handleClick = (item) => {
+        if (item.redirect && !item.pdfSrc) {
+            window.open(item.redirect, "_blank"); // Opens the link in a new tab
+        } else if (item.pdfSrc) {
+            const link = document.createElement("a");
+            link.href = item.pdfSrc;
+            link.download = item.pdfSrc.split('/').pop(); // Extracts filename from URL
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     };
 
     return (
@@ -49,7 +61,7 @@ function ActsAndRegulation() {
                     <div 
                         key={i} 
                         className="relative group flex flex-col gap-4 mt-8 py-4 w-96 cursor-pointer"
-                        onClick={() => handleDownload(item.pdfSrc)}
+                        onClick={() => handleClick(item)}
                     >
                         {/* Image Container */}
                         <div className="relative w-96 h-72 rounded-lg overflow-hidden">
