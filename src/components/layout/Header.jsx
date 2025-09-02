@@ -67,7 +67,7 @@ function Header() {
           </div>
           <div className="flex items-center gap-2">
             <IoMdCall />
-            <span className="text-sm">Call: +977-9876652452</span>
+            <span className="text-sm">Call: +977-9801060980</span>
           </div>
         </div>
 

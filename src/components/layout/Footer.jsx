@@ -79,7 +79,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold  text-lg">Get In Touch</h4>
             <p className="mt-4 text-sm">info@nra.org.np</p>
-            <p className="mt-2 text-sm font-bold text-white">+977-9817672867</p>
+            <p className="mt-2 text-sm font-bold text-white">+977-9801060980</p>
           </div>
 
         </div>

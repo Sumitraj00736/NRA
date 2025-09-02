@@ -21,7 +21,7 @@ const MemberList = () => {
     { id: 17, logo: "https://i.ibb.co/WWj84vv6/logo-light.png", title: "Maya Remit Pvt. Ltd." },
     { id: 18, logo: "https://i.ibb.co/0pqyKjGh/Prabhu-logo-1.png", title: "Prabhu Money Transfer Pvt. Ltd." },
     { id: 19, logo: "https://i.ibb.co/RkR8HfnK/v6-IDg-Loy-ATd-GYqlv-OXDM.png", title: "Samsara Remit Pvt. Ltd." },
-    { id: 20, logo: "https://i.ibb.co/r2jc4XgR/28724.jpg", title: "ATT Remit Pvt.Ltd." },
+    { id: 20, logo: "https://i.ibb.co/392MHjtz/ATT-Remit-new-logo-2023.jpg", title: "ATT Remit Pvt.Ltd." },
     { id: 21, logo: "https://i.ibb.co/chKNF1p9/Ysy-O17-Kd90i-Sfhs-Rswj-Ydx-HN25-GS0-MAh-Wbnltk0-UIG6.png", title: "Thamel Remit Pvt. Ltd." },
     { id: 22, logo: "https://i.ibb.co/Kv1FQkR/united-remit.png", title: "United Remit Pvt. Ltd." },
     { id: 23, logo: "https://i.ibb.co/Vc6CHw1T/new-logo.jpg", title: "Machhapuchhre Bank Ltd." },
@@ -29,6 +29,7 @@ const MemberList = () => {
     { id: 25, logo: "https://i.ibb.co/7Jqm1Mdn/Logo.png", title: "Goodwill Remit Pvt. Ltd." },
     { id: 26, logo: "https://i.ibb.co/Dfq4X0TT/becdb806252d1cd9538739fcfc339427-148.jpg", title: "Siddhartha Bank Ltd." },
     { id: 27, logo: "https://i.ibb.co/5tT5L60/ctzbank-international-limited-cover-e-2147483647-v-beta-t-e96-Hiv-Nb-Fwc-ZJ0-CQCBy-R-OKta-HRSx-Uvr-C.jpg", title: "Citizens Bank International Ltd." },
+    { id: 28, logo: "https://i.ibb.co/5gSS7c6L/Whats-App-Image-2025-09-02-at-12-03-33-7308d7a9.jpg", title:"iSend Money Transfer"}
   ];
 
   return (
